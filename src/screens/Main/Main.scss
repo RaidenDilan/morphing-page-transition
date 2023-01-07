@@ -2,6 +2,134 @@
 @import '../../theme/mixins.module.scss';
 
 .Main {
-  @include flex(center, center, true);
-  min-height: calc(100vh - 8em);
+  height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+
+	.content {
+		width: 100%;
+		height: 100vh;
+		position: relative;
+
+		h2 {
+			margin: 0;
+		}
+
+		&__inner {
+			width: 100%;
+			height: 100vh;
+			position: relative;
+			text-align: center;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&__title {
+			font: var(--font-alt);
+			color: var(--color-title);
+			margin: 0;
+			line-height: 1;
+
+			span {
+				display: inline-block;
+			}
+		}
+
+		&__subtitle {
+			font: var(--font-alt);
+			font-size: 1.5em;
+			color: var(--color-subtitle);
+			padding: 0.5em 0 0 0;
+			margin: 0;
+		}
+	}
+	
+	.content--intro {
+		z-index: 100;
+		height: 200vh;
+	}
+	
+	.content--fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: var(--color-content-fixed);
+		/* background-image: var(--bg-img); */
+		/* can't use this as relative path until it's fixed in Chrome https://bugs.chromium.org/p/chromium/issues/detail?id=618165 */
+		background-position: 50% 50%;
+		background-size: cover;
+	}
+
+	.content--intro .content__inner {
+		background: var(--color-content);
+	}
+
+	.shape-wrap {
+		position: relative;
+		z-index: 10;
+		margin: -5px 0 0 0; /* Hide the gap */
+	}
+
+	.shape {
+		height: 100vh;
+		width: 100%;
+		display: block;
+		fill: var(--color-content);
+	}
+
+	.content__title--filled {
+		background: var(--color-content);
+		padding: 0.25em 0.5em;
+	}
+
+	.enter {    
+		margin: 6vh 0 0 0;
+		font-size: 1em;
+		letter-spacing: 3px;
+		cursor: pointer;
+		font-weight: bold;
+		white-space: pre;
+		color: var(--color-enter);
+		pointer-events: auto;
+
+		&:hover,
+		&:focus {    
+			color: var(--color-enter);
+		}
+
+		span {
+			display: inline-block;
+		}
+	}
+
+	.explore {    
+		margin: 6vh 0 0 0;
+		font-size: 1em;
+		letter-spacing: 3px;
+		cursor: pointer;
+		font-weight: bold;
+		white-space: pre;
+		color: var(--color-enter);
+		pointer-events: auto;
+
+		background: var(--color-subtitle);
+		color: var(--color-title);
+		padding: 0.5em 1em;
+
+		&:hover,
+		&:focus {    
+			background: var(--color-text);
+		}
+	}
+
+	@media screen and (max-width: 50em) {
+		.content--intro .content__inner,
+		.content__title {
+			font-size: 2em;
+		}
+	}
 };
