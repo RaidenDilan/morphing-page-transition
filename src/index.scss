@@ -1,26 +1,90 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
+	font-family: 'Nunito', sans-serif;
+	min-height: 100vh;
+	color: #57585c;
+	color: var(--color-text);
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	padding: 0;
+	margin: 0;
 }
 
-.modal-enter {
-  opacity: 0;
-  transform: translate(-50%, -100%);
+a {
+	text-decoration: none;
+	color: #5d93d8;
+	color: var(--color-link);
+	outline: none;
 }
 
-.modal-enter-active {
-  opacity: 1;
-  transform: translate(-50%, 0%);
-  transition: opacity .3s, transform .3s;
+a:hover,
+a:focus {
+	color: #423c2b;
+	color: var(--color-link-hover);
+	outline: none;
 }
 
-.modal-exit {
-  opacity: 1;
-  transform: translate(-50%, 0%);
+.demo-3 {
+	--color-text: #fff;
+	--color-link: #4c0a75;
+	--color-link-hover: #f470d2;
+	--color-enter: #f470d2;
+	--color-title: #ffffff;
+	--color-subtitle: #4c0a75;
+	--color-menu-item: #000;
+	--color-menu-item-hover: #4c0a75;
+	--color-menu-item-hover-alt: #8544da;
+	--color-content: #ffb4ec;
+	--color-content-fixed: #ddd;
+	--font-alt: 400 6vw/1 'Chewy', serif;
+	--color-next: #fff;
+	--color-next-hover: #000;
 }
 
-.modal-exit-active {
-  opacity: 0;
-  transform: translate(-50%, 100%);
-  transition: opacity .3s, transform .3s;
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ccd8e4;
+	background: var(--color-content);
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	margin: -25px 0 0 -25px;
+	pointer-events: none;
+	background: #333;
+	background: var(--color-text);
+	border-radius: 50%;
+	animation: loaderAnim 0.5s ease infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	0% {
+		transform: scale3d(0.5,0.5,1);
+	}
+	100% {
+		transform: scale3d(1,1,1);
+	}
+}
+
+.demo-3 .content--fixed {
+	background-image: url('./assets//images//bg3.jpg');
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/Users/Raiden/development/.boilerplates/vite-boilerplate/__tests__/components/ErrorBoundary.spec.tsx should render without crashing 1`] = `
+exports[`/Users/Raiden/development/ANIMATIONS/morphing-page-transition/__tests__/components/ErrorBoundary.spec.tsx should render without crashing 1`] = `
 <DocumentFragment>
   <div>
     Child
